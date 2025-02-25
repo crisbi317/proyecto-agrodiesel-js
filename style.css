@@ -1,0 +1,33 @@
+/*estilos generales y reset*/
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color: black;
+    color: azure;
+}
+header, main, footer{
+    width: 98%;
+    margin: 0 auto;
+}
+
+/*encabezado*/
+header{
+    display: flex;
+}
+h1{
+    width: 80%;
+    font-size: xx-large;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+ /*cuerpo*/
+ main{
+    background-color: rgb(46, 50, 46);
+    height: 70vh;
+    padding: 10%;
+ }
+ footer{
+    height: 10vh;
+ }
