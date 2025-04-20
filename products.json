@@ -1,0 +1,9 @@
+[{"id":"a1","nombre":"Aceite","precio": 2000,"descripcion": "Aceite para motores diesel","foto":"aceite.jpg"},
+{"id":"a2","nombre":"Refrijerante","precio": 2000,"descripcion": "Refrijerante especial para motores diesel","foto":"refrijerante.jpg"},
+{"id":"a3","nombre":"Agua destilada","precio": 8000,"descripcion": "Agua destilada especial por 5ltr","foto":"agua-destilada.jpg"}, 
+{"id":"a4","nombre":"Grasa roja","precio": 2000,"descripcion": "Grasa roja lubricante para tractores","foto":"grasa-roja.jpg"}, 
+{"id":"a5","nombre":"Grasa de lithio","precio": 2000,"descripcion": "Grasa de litio lubricante para engranajes","foto":"grasa-lithio.jpg"}, 
+{"id":"a6","nombre":"Batería","precio": 2000,"descripcion": "Batería especial tractores Zanello","foto":"bateria.jpg"}, 
+{"id":"a7","nombre":"Filtro de aceite","precio": 2000,"descripcion": "Filtro de aceite para tractores Pounny","foto":"filtro-aceite.jpg"}, 
+{"id":"a8","nombre":"Filtro de aire","precio": 2000,"descripcion": "Filtro de aire para tractores Pounny","foto":"filtro-aire.jpg"}, 
+{"id":"a9","nombre":"Filtro de combustible","precio": 2000,"descripcion": "Filtro de combustible para tractores Pounny","foto":"filtro-combustible.jpg"}] 

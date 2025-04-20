@@ -11,50 +11,107 @@
 <body>
     <header>
         <h1>Productos Agrodiesel</h1>
-        <a href="#"> <span class="material-symbols-outlined">
+        <a href="#"id="iconoCarrito"> <span class="material-symbols-outlined">
             garden_cart
             </span></a>
     </header>
-    <main>
-        <h2>Carro de compras de productos para el agro</h2>
-        <p>El proyecto se centrará en un carrito de compras de productos para el agro. Una vez finalizado será añadido a la pagina diseñada en diseño web. En el mismo se solicitará el ingreso con clave para poder agregar los productos, por otra parte el usuario que quiera comprar podrá hacerlo directamente </p>
-        
-
-          <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Aceite</h5>
-                      <p class="card-text">Aceite de primera para sus motores.</p>
-                      <a href="#" class="btn btn-primary">Agregar</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Refrigerante</h5>
-                      <p class="card-text">Refrigerante con componentes activos.</p>
-                      <a href="#" class="btn btn-primary">Agregar</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Agua destilada</h5>
-                      <p class="card-text">Usos múltiples para motores.</p>
-                      <a href="#" class="btn btn-primary">Agregar</a>
-                    </div>
-                  </div>
-            </div>
+        <!-- Menú de navegación -->
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" style="display:none;">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Agrodiesel</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" id="menuAgregarProducto">Agregar Producto</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" id="menuVerProductos">Productos</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" id="menuVerCarrito">Carrito</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" id="menuLogout">Cerrar Sesión</a>
+                      </li>
+                  </ul>
+              </div>
           </div>
+      </nav>
+    <!-- Formulario logear -->
+    <div id="loginForm" class="container mt-5" style="max-width: 400px;">
+      <h3>Iniciar sesión</h3>
+      <form id="formLogin">
+          <div class="mb-3">
+              <label for="username" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="username" required placeholder="admin">
+          </div>
+          <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" required placeholder="admin123">
+          </div>
+          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </form>
+  </div>
+
+  <!-- Seccion administrador oculta -->
+  <div id="adminSection" class="container mt-5" style="display:none;">
+      <h3>Agregar Producto</h3>
+      <form id="formAgregarProducto">
+          <div class="mb-3">
+              <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+              <input type="text" class="form-control" id="nombreProducto" required>
+          </div>
+          <div class="mb-3">
+              <label for="precioProducto" class="form-label">Precio</label>
+              <input type="number" class="form-control" id="precioProducto" required>
+          </div>
+          <div class="mb-3">
+              <label for="descripcionProducto" class="form-label">Descripción</label>
+              <textarea class="form-control" id="descripcionProducto" required></textarea>
+          </div>
+          <div class="mb-3">
+              <label for="fotoProducto" class="form-label">Imagen</label>
+              <input type="file" class="form-control" id="fotoProducto">
+          </div>
+          <button type="submit" class="btn btn-success">Agregar Producto</button>
+      </form>
+  </div>
+    <main>
+        <h2>Productos para el agro</h2>
+                 
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="productos"></div>
+        <div id="totalCompra" class="mt-4">
+          <strong>Total: $0</strong>
+        </div>
+        
+        <!-- Botón Finalizar Compra -->
+        <button id="finalizarCompra" class="btn btn-primary mt-4">Finalizar Compra</button>
     </main>
     <footer></footer>
+    <!-- Modal del carrito -->
+<div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-black">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="carritoContenido">
+        <!-- Productos del carrito se mostrarán aquí -->
+      </div>
+      <div class="modal-footer">
+        <strong id="modalTotal">Total: $0</strong>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
 </body>
 </html>

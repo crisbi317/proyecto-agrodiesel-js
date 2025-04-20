@@ -16,6 +16,15 @@ header, main, footer{
 header{
     display: flex;
 }
+header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
 h1{
     width: 80%;
     font-size: xx-large;
@@ -25,9 +34,21 @@ h1{
  /*cuerpo*/
  main{
     background-color: rgb(46, 50, 46);
-    height: 70vh;
+    height: 200vh;
     padding: 10%;
  }
- footer{
+ /* #productos h5{
+    text-align: center;
+ } */
+#productos span{
+    display: block;
+    font-weight: bolder;
+}
+
+#productos img{
+    width: auto;
+    max-height: 200px;
+}
+  footer{
     height: 10vh;
  }
